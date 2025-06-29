@@ -314,24 +314,24 @@ if __name__ == "__main__":
     """
     code2 = """
         height = 60.0
- width = 80.0
- thickness = 10.0
- diameter = 22.0
- padding = 12.0
+        width = 80.0
+        thickness = 10.0
+        diameter = 22.0
+        padding = 12.0
 
- # make the base
- result = (
-     cq.Workplane("XY")
-     .box(height, width, thickness)
-     .faces(">Z")
-     .workplane()
-     .hole(diameter)
-     .faces(">Z")
-     .workplane()
-     .rect(height - padding, width - padding, forConstruction=True)
-     .vertices()
-     .cboreHole(2.4, 4.4, 2.1)
- )
+        # make the base
+        result = (
+        cq.Workplane("XY")
+        .box(height, width, thickness)
+        .faces(">Z")
+        .workplane()
+        .hole(diameter)
+        .faces(">Z")
+        .workplane()
+        .rect(height - padding, width - padding, forConstruction=True)
+        .vertices()
+        .cboreHole(2.4, 4.4, 2.1)
+        )
     """
     solid1 = _load_solid_from_code(code1)
     solid2 = _load_solid_from_code(code2)
